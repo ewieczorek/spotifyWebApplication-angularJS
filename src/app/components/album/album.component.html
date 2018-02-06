@@ -1,0 +1,23 @@
+<div id="albumPage" *ngIf="album">
+    <h1 *ngIf="album.artists.length > 0"><span *ngFor="let artist of album.artists">{{artist.name}}</span></h1>
+    <header>
+        <h1 class="album-name">{{album.name}}</h1>
+        <h4>Released: {{album.release_date}}</h4>
+        <div *ngIf="album.images.length > 0">
+            <img class="artist-image img-thumbnail img-responsive" src={{album.images[0].url}}>
+        </div>
+    </header>
+
+    <div *ngIf="album.tracks.items.length > 0">
+        <h3>Albums:</h3>
+        <div class="row">
+            <div *ngFor="let track of album.tracks.items">
+                <div class="well">
+                    {{track.track_number}}: {{track.name}}
+                    <a href="{{track.external_urls.spotify}}" target="_blank" class="btn btn-success btn-sm">Open Song In Spotify</a>
+                </div>
+                <!--<iframe src="https://open.spotify.com/embed?uri=spotify:track:{{track.id}}" width="300" height="150" frameborder="0" allowtransparency="true"></iframe>-->
+            </div>
+        </div>
+    </div>
+</div>

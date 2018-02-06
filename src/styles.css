@@ -1,0 +1,17 @@
+.artist-image {
+    width: 200px;
+    height: auto;
+}
+
+.artist-page-genres {
+    border-bottom: colid 1px #ffffff;
+    color: lightblue;
+}
+
+.album-image {
+    width: 80px;
+}
+
+.album-name {
+    color: lightblue;
+}

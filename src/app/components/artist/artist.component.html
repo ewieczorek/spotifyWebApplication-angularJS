@@ -1,0 +1,27 @@
+<div *ngIf="artist">
+    <h1>{{artist.name}}</h1>
+    <header>
+        <div *ngIf="artist.images.length > 0">
+            <img class="artist-image img-thumbnail img-responsive" src={{artist.images[0].url}}>
+        </div>
+
+        <p *ngIf="artist.genres.length > 0" class="artist-page-genres"><span>Genres:</span>
+            <small *ngFor="let genre of artist.genres">{{genre}}, </small>
+        </p>
+    </header>
+
+    <div *ngIf="artistAlbums.length > 0">
+        <h3>Albums:</h3>
+        <div class="row">
+            <div *ngFor="let album of artistAlbums">
+                <div class="well">
+                    {{album.name}}
+                    <div *ngIf="album.images.length > 0">
+                        <img class="album-image img-thumbnail img-responsive" src={{album.images[0].url}}>
+                    </div>
+                    <a href="/album/{{album.id}}" class="btn btn-primary btn-sm">Album details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
